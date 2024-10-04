@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kutya.HelloController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Fájl">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onClickAlap" text="Alaphelyzet" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClickKilep" text="Kilépés" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Gazdi">
+               <items>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onClickFiu" selected="true" text="Fiú">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gazdak" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onClickLany" text="Lány" toggleGroup="$gazdak">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT2" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </RadioMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onClickApu" text="Apu" toggleGroup="$gazdak">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT3" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </RadioMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onClickTroll" text="Troll" toggleGroup="$gazdak">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT4" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </RadioMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#onClickBoszi" text="Boszi" toggleGroup="$gazdak">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT5" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </RadioMenuItem>
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Súgó">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onClickNevjegy" text="Névjegy" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox>
+         <children>
+            <Pane fx:id="pane" focusTraversable="true" onKeyPressed="#onKeyPressed" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: lightgreen; -fx-border-color: black;">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Pane>
+            <VBox spacing="10.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" onMousePressed="#onClickKutya" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kutyus/kutyus.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" onMousePressed="#onClickCapa" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kutyus/capa.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="74.0" onMousePressed="#onClickPingvin" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kutyus/pingvin.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="74.0" onMousePressed="#onClickRak" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kutyus/rak.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
